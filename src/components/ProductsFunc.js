@@ -3,6 +3,10 @@ import ProductFunc from './ProductFun';
 import { Container ,Row ,Col } from 'react-bootstrap';
  
 function ProductsFunc () {
+    const buy = (product) => {
+        product.quantity --;
+        
+       };
     return ( 
 
         <Container style={{ marginTop: "30px" }}>
@@ -10,7 +14,7 @@ function ProductsFunc () {
         <Row>
           {products.map((product) => (
             <Col md={4}>
-              <ProductFunc product={product}></ProductFunc>
+              <ProductFunc product={product} buyFunction={buy}></ProductFunc>
             </Col>
           ))}
         </Row>
