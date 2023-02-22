@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button, Card, Col, Row } from "react-bootstrap";
 function ProductFunc(props) {
     const [product,setProduct] = useState(props.product)
+    const MaClasse = product.like > 5 ? "bestProduct"  : "text-center"
    const  addLikes =() =>
     {
         setProduct({...product,like:product.like+1})
@@ -9,7 +10,7 @@ function ProductFunc(props) {
     return ( 
         <Card
         style={{ width: "18rem" }}
-        className="text-center"
+        className={MaClasse}
         border="secondary"
       >
         <Card.Header>

@@ -14,6 +14,14 @@
   }
 }
 
+.bestProduct {
+  background-color:#DB7090;
+  animation:  clignote 2s linear infinite;
+  
+}
+@keyframes clignote {  
+  50% { opacity: 0.5; }
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -29,6 +37,14 @@
   color: #61dafb;
 }
 
+.bestProduct {
+  background-color:#DB7090;
+  animation:  clignote 2s linear infinite;
+  
+}
+@keyframes clignote {  
+  50% { opacity: 0.5; }
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
