@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Button, Card, Col, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
 function ProductFunc(props) {
     const [product,setProduct] = useState(props.product)
     const MaClasse = product.like > 5 ? "bestProduct"  : "text-center"
@@ -23,7 +22,7 @@ function ProductFunc(props) {
           />
         </Card.Header>
         <Card.Body>
-          <Card.Title><Link to={`/products/${product.name}`}> {product.name}</Link></Card.Title>
+          <Card.Title>{product.name}</Card.Title>
           <Card.Text>Quantity: {product.quantity} </Card.Text>
           <Card.Text> Price : {product.price}dt </Card.Text>
           <Card.Text>Like : {product.like}</Card.Text>
