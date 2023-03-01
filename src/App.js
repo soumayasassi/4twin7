@@ -2,14 +2,14 @@ import logo from './logo.svg';
 import './App.css';
 import Welcome from './components/Welcome';
 import Product from './components/Product';
-import Products from './components/Products';
+//import Products from './components/Products';
 import CycleDeVie from './ExampleCours/CycleDeVie';
-import ProductsFunc from './components/ProductsFunc';
 import { Routes ,Route } from 'react-router-dom';
-import NotFound from './part2/NotFound';
-import NavBarComponent from './part2/NavBarComponent';
-import ProductDetails from './part2/ProductDetails';
- 
+import React, { Suspense } from 'react';
+const Products = React.lazy(()=> import('./components/ProductsFunc'))
+const NotFound = React.lazy(()=> import('./part2/NotFound'))
+const NavBarComponent = React.lazy(()=> import('./part2/NavBarComponent'))
+const ProductDetails = React.lazy(()=> import('./part2/ProductDetails'))
 function App() {
   return (
     <div className="App">
@@ -17,16 +17,17 @@ function App() {
       <CycleDeVie favCol="yellow"/>
       <Products>
       <ProductsFunc/>*/}
+      <Suspense fallback={<p>Chargement ...</p>}>
       <NavBarComponent/>
  <Routes>
  <Route  path='/products'>
-<Route index  element={<ProductsFunc/>}/>
+<Route index  element={<Products/>}/>
   <Route path=':name' element={<ProductDetails/>}/>
  </Route>
 <Route  path='*' element={<NotFound/>}/>
 
  </Routes>
-
+ </Suspense>
 </div>
   )
 }
