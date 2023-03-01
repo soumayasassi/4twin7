@@ -9,15 +9,14 @@ function NavBarComponent() {
       <Container>
         <Navbar.Brand to="/products">MyStore</Navbar.Brand>
         <Nav className="me-auto">
-          <Nav.Link
+          <NavLink
             to="/products"
-            as={NavLink}
-            style={(isActive) => ({
-              textDecoration: isActive ? "underline" : "none",
+            style={({ isActive }) => ({
+              textDecoration: isActive && "underline",
             })}
           >
             products
-          </Nav.Link>
+          </NavLink>
         </Nav>
       </Container>
     </Navbar>

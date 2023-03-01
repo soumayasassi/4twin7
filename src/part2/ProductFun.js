@@ -22,7 +22,10 @@ function ProductFunc(props) {
           />
         </Card.Header>
         <Card.Body>
-          <Card.Title>{product.name}</Card.Title>
+                <Card.Title><Link to={`/products/${product.name}`}>
+                  {product.name}
+                  </Link>
+                  </Card.Title>
           <Card.Text>Quantity: {product.quantity} </Card.Text>
           <Card.Text> Price : {product.price}dt </Card.Text>
           <Card.Text>Like : {product.like}</Card.Text>
